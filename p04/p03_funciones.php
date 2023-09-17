@@ -77,6 +77,44 @@
     echo "<p>Cantidad de números generados: $numerosGenerados</p>";
     ?>
 
+    <h2>Ejercicio 3</h2>
+   <?php
+$numeroDado = isset($_GET['numero']) ? intval($_GET['numero']) : 0;
+
+if ($numeroDado <= 0) {
+    echo "Por favor, proporcione un número válido como parámetro 'numero' en la URL.";
+    exit;
+}
+
+
+$numeroEncontrado = null;
+
+while ($numeroEncontrado === null) {
+    $numeroAleatorio = rand(1, 1000);
+    
+    if ($numeroAleatorio % $numeroDado === 0) {
+        $numeroEncontrado = $numeroAleatorio;
+    }
+}
+
+echo "El primer número entero aleatorio múltiplo de {$numeroDado} es (usando while): {$numeroEncontrado} <br>";
+
+$numeroEncontrado = null;
+
+do {
+    $numeroAleatorio = rand(1, 1000);
+    
+    if ($numeroAleatorio % $numeroDado === 0) {
+        $numeroEncontrado = $numeroAleatorio;
+    }
+} while ($numeroEncontrado === null);
+
+echo "\nEl primer número entero aleatorio múltiplo de {$numeroDado} es (usando do-while): {$numeroEncontrado}";
+
+?>
+
+    
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
