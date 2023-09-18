@@ -113,7 +113,23 @@ echo "\nEl primer número entero aleatorio múltiplo de {$numeroDado} es (usando
 
 ?>
 
-    
+    <h2>Ejercicio 4</h2>
+
+    <?php
+$arreglo = array();
+for ($i = 97; $i <= 122; $i++) {
+    $arreglo[$i] = chr($i);
+}
+echo "<table border='1'>";
+echo "<tr><th>Indice</th><th>Valor</th></tr>";
+
+foreach ($arreglo as $indice => $letra) {
+    echo "<tr><td>$indice</td><td>$letra</td></tr>";
+}
+
+echo "</table>";
+?>
+
 
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
