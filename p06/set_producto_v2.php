@@ -8,7 +8,7 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Recuperar y validar los datos del formulario
+        
         $nombre = validarInput($_POST["nombre"]);
         $marca = validarInput($_POST["marca"]);
         $modelo = validarInput($_POST["modelo"]);
@@ -17,7 +17,11 @@
         $detalles = validarInput($_POST["detalles"]);
         $imagen = validarInput($_POST["imagen"]);
 
-        $link = new mysqli('localhost', 'root', '123456789', 'marketzone');
+        @$link = new mysqli('localhost', 'root', '123456789', 'marketzone');	
+
+        $sql = "INSERT INTO productos (nombre, marca, modelo, precio, unidades, detalles, imagen, eliminado) 
+        VALUES ('$nombre', '$marca', '$modelo', $precio, $unidades, '$detalles', '$imagen', 0)";
+
 
         if ($link->connect_errno) {
             die('Falló la conexión: ' . $link->connect_error . '<br/>');
