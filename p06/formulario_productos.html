@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Productos</title>
+    <style>
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 15%;
+            padding: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Registro de Productos</h2>
+    <form action="set_producto_v2.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" required>
+
+        <label for="precio">Precio:</label>
+        <input type="text" name="precio" required>
+
+        <label for="unidades">Unidades:</label>
+        <input type="text" name="unidades" required>
+
+        <label for="detalles">Detalles:</label>
+        <textarea name="detalles" required></textarea>
+
+        <label for="imagen">URL de la Imagen:</label>
+        <input type="text" name="imagen" required>
+<br>
+        <input type="submit" value="Registrar Producto">
+    </form>
+</body>
+</html>
