@@ -28,7 +28,7 @@
         }
 
         $sql = "INSERT INTO productos (nombre, marca, modelo, precio, unidades, detalles, imagen) 
-                VALUES ('$nombre', '$marca', '$modelo', $precio, $unidades, '$detalles', '$imagen')";
+                VALUES ('$nombre', '$marca', '$modelo', '$precio', '$detalles', '$unidades', '$imagen')";
 
         if ($link->query($sql)) {
             echo '<p>Producto registrado con éxito:</p>';
